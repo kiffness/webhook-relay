@@ -1,5 +1,3 @@
-from ast import List
-
 from pydantic import BaseModel
 
 class SlackText(BaseModel):
@@ -19,7 +17,7 @@ class SlackHeader(BaseModel):
 
 class SlackContext(BaseModel):
     type: str = "context"
-    elements: List[SlackText]
+    elements: list[SlackText]
 
 class SlackMessage(BaseModel):
     """
