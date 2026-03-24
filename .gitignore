@@ -1,8 +1,5 @@
 .idea
 .env
 venv/
-app/__pycache__/
-app/forwarders/__pycache__/
-app/handlers/__pycache__/
-app/models/__pycache__/
-app/utils/__pycache__/
+**/__pycache__/
+*.pyc
