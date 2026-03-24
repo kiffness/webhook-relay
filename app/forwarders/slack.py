@@ -24,7 +24,7 @@ async def send_to_slack(message: SlackMessage, webhook_url: str | None = None) -
         return False
 
     payload = message.model_dump()
-    max_attempts = settings.forward_max_attempts
+    max_attempts = settings.forward_retry_attempts
     backoff = settings.forward_retry_backoff
 
     async with httpx.AsyncClient(timeout=10.0) as client:
