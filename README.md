@@ -1,5 +1,12 @@
 # WebhookRelay
 
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)
+![GitHub release](https://img.shields.io/github/v/release/YOUR-USERNAME/webhook-relay)
+![Tests](https://github.com/YOUR-USERNAME/webhook-relay/actions/workflows/tests.yml/badge.svg)
+
 A lightweight, production-ready Python service for receiving, verifying, and forwarding webhooks.
 
 Handles **GitHub → Slack** notifications for pull request and push events, with a generic endpoint for forwarding any payload to any HTTP endpoint.
