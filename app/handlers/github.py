@@ -23,7 +23,7 @@ def handle_pull_request(event: PullRequestEvent) -> SlackMessage:
     reopened, labelled, and review requested.
     """
     pr = event.pull_request
-    repo = event.repo
+    repo = event.repository
     action = event.action
 
     # GitHub fires action="closed" for both merged and simply closed PRs
@@ -39,7 +39,7 @@ def handle_pull_request(event: PullRequestEvent) -> SlackMessage:
     pr_link = f"<{pr.html_url}#{pr.number}: {pr.title}>"
     author_link = f"<{pr.user.html_url}|@{pr.user.login}>"
 
-    blocks = list[dict] = [
+    blocks: list[dict] = [
         {
             "type": "header",
             "text": {"type": "plain_text", "text": f"{emoji} Pull Request {label.title()}"},

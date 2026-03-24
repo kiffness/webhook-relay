@@ -1,14 +1,14 @@
 from pydantic import BaseModel, HttpUrl
 
-class GithubUser(BaseModel):
+class GitHubUser(BaseModel):
     login: str
     html_url: HttpUrl
 
-class GithubRepo(BaseModel):
+class GitHubRepo(BaseModel):
     full_name: str
     html_url: HttpUrl
 
-class GithubLabel(BaseModel):
+class GitHubLabel(BaseModel):
     name: str
     color: str
 
@@ -18,9 +18,9 @@ class PullRequest(BaseModel):
     html_url: HttpUrl
     state: str
     merged: bool
-    user: GithubUser
+    user: GitHubUser
     body: str | None = None
-    labels: list[GithubLabel] = []
+    labels: list[GitHubLabel] = []
     additions: int = 0
     deletions: int = 0
     changed_files: int = 0
@@ -30,8 +30,8 @@ class PullRequestEvent(BaseModel):
     action: str
     number: int
     pull_request: PullRequest
-    repository: GithubRepo
-    sender: GithubUser
+    repository: GitHubRepo
+    sender: GitHubUser
 
 class Commit(BaseModel):
     id: str
@@ -43,6 +43,6 @@ class PushEvent(BaseModel):
     """Payload for push webhook events."""
     ref: str
     commits: list[Commit]
-    repository: GithubRepo
+    repository: GitHubRepo
     pusher: dict
     compare: HttpUrl
